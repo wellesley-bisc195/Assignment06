@@ -118,7 +118,7 @@ end
 # 
 # One thing to keep in mind
 # is that the sequences in a fasta file
-# can be spread out over multipl lines,
+# can be spread out over multiple lines,
 # but they'll be much easier to work with as a single string,
 # so your function should have a way to join multiple lines
 # (remember the `join()` function?).
@@ -133,7 +133,7 @@ end
 
 Reads a fasta-formated file and returns 2 vectors,
 one containing parsed headers,
-the other containing the entire seqence as a `String`.
+the other containing the entire sequence as a `String`.
 
 Note: function does not validate DNA sequences for correctness.
 
