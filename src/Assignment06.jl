@@ -1,11 +1,9 @@
 module Assignment06
 
-export question1,
-       question2,
-       question3,
-       question4,
-       question5
-
+export count_records,
+       fasta_header,
+       parse_fasta
+       
 include("assignment.jl")
 
 end
