@@ -62,7 +62,7 @@ end
     @test Assignment06.mean_cov2_length == mean(l)
     @test Assignment06.std_cov2_length == std(l)
     @test Assignment06.mean_cov2_gc == mean(gc ./ l) || Assignment06.mean_cov2_gc == mean(gc ./ nonl)
-    @test Assignment06.std_cov2_gc == std(gc ./ l) || Assignment06.std_cov2_gc == std(gc ./ l)
+    @test Assignment06.std_cov2_gc == std(gc ./ l) || Assignment06.std_cov2_gc == std(gc ./ nonl)
 
 end
 
