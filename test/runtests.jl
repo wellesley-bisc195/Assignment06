@@ -53,14 +53,16 @@ end
             push!(curseq, line)
         end
     end
-    
+    push!(seqs, join(curseq))
+
     l = map(length, seqs)
-    gc = map(x-> count(base-> occursin(uppercase(base), "ACGT"), x), seqs)
+    nonl = map(s-> length(filter(!=('N'), uppercase(s))), seqs)
+    gc = map(x-> count(base-> occursin(uppercase(base), "CG"), x), seqs)
 
     @test Assignment06.mean_cov2_length == mean(l)
     @test Assignment06.std_cov2_length == std(l)
-    @test Assignment06.mean_cov2_gc == mean(gc)
-    @test Assignment06.std_cov2_gc == std(gc)
+    @test Assignment06.mean_cov2_gc == mean(gc ./ l) || Assignment06.mean_cov2_gc == mean(gc ./ nonl)
+    @test Assignment06.std_cov2_gc == std(gc ./ l) || Assignment06.std_cov2_gc == std(gc ./ l)
 
 end
 
